@@ -1,0 +1,38 @@
+name page: first name & last name(optional)
+https://accounts.google.com/signup/v2/createaccount?biz=false&cc=US&continue=https%3A%2F%2Fwww.google.com%2F&dsh=S1728174338%3A1687921447162505&flowEntry=SignUp&flowName=GlifWebSignIn&hl=en&authuser=0
+
+
+name page: first name & last name(optional)
+contact page: student or teacher, email & phone number(optional)
+school page: School name, address, state, city
+info page: current year [grade], part of science fair project {Y/N}
+// if no: what is it for?
+// if yes: project name, description, hyptohesis, operation requirements, 
+location page: location [loc x, loc y, loc z] /*if loc x: sub locations; subloc x, subloc y... */, number of dives [int], timing of dives [daily, weekly, monthly], time in water[20m, 30m, 45m, 60m, fill in], other requirements [quadrates, sensors, objects, etc. [check all that apply]]
+
+review page: review
+submit page: submit
+
+approved page: code to access skeleton website to fill in data
+
+
+--
+Design:
+
+Underwater, waves slowly moving, fish swimming, bubbles floating up, seaweed moving, etc.
+
+?-the form stuff will be on a clipboard, and the clipboard will be on a table, and the table will be on the ocean floor
+
+?the form stuff will be on a sub
+
+? darker square in the middle of the screen, with the form stuff on it
+
+
+https://web.archive.org/web/20120111093336/http://www.deutschesee.de/familyoffish/
+
+
+
+5 chunks/blocks one page.
+Name | Contact | School | Info | Location
+Review | Submit
+[info saved to a database]
