@@ -7,7 +7,6 @@
 }*/
 
 body {
-    /* background: url('/web/20130509012220im_/http://www.deutschesee.de/familyoffish/img/bg_sky.jpg') no-repeat scroll center 0 #03060d; */
     background: url('images/bg.png') no-repeat scroll center 0 #03060d;
     overflow-x: hidden;
     vertical-align: baseline;
@@ -58,7 +57,7 @@ div#bubbles {
 }
 
 
-div#form-wrapper p.info {
+div#form-wrapper div.info {
     width: 400px;
     /* height: 280px; */
     margin: 0 auto;
@@ -66,6 +65,11 @@ div#form-wrapper p.info {
     margin-bottom: 100px;
     background: radial-gradient(ellipse at center, #264e7e 0%, #133260 80%);
     box-shadow: 0 0 20px #0d2343;
-    border-radius: 10px;
+    border-radius: 20px;
     color: lightblue;
+}
+
+div#form-wrapper p.notice {
+    font-size: .6em;
+    color: red;
 }

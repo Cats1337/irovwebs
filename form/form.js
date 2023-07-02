@@ -10,7 +10,16 @@ window.addEventListener('DOMContentLoaded', function() {
         // Check if either email or phone is provided
         if (!email && !phone) {
             event.preventDefault(); // Prevent form submission
-            alert('Please provide either an email or phone number.');
+            // alert('Please provide either an email or phone number.');
+
+            // if email and phone are empty, add red border to both
+            document.getElementById('email').style.border = "1px solid red";
+            document.getElementById('phone').style.border = "1px solid red";
+        } else {
+            // if email and phone are not empty, remove red border from both
+            document.getElementById('email').style.border = "1px solid #ced4da";
+            document.getElementById('phone').style.border = "1px solid #ced4da";
+
         }
     });
 
@@ -57,8 +66,9 @@ window.addEventListener('DOMContentLoaded', function() {
         return formattedNumber;
     }
 
-
     /* Email address */
 
+
+    /* Required */
 
 });
