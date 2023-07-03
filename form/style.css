@@ -73,3 +73,8 @@ div#form-wrapper p.notice {
     font-size: .6em;
     color: red;
 }
+
+/* class="question" */
+div#form-wrapper div.question {
+    padding-bottom: 1em;
+}

@@ -72,3 +72,4 @@ window.addEventListener('DOMContentLoaded', function() {
     /* Required */
 
 });
+
