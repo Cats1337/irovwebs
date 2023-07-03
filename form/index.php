@@ -39,7 +39,7 @@
     
                 <div class="question" id="q4">
                     <label for="phone">Phone Number:</label><br>
-                    <input type="tel" id="phone" name="phone" placeholder="(###) ###-####" enterkeyhint="next" enterkeyhint="next">
+                    <input type="tel" id="phone" name="phone" placeholder="(###) ###-####" enterkeyhint="next">
                 </div>
                 <p id="cont" class="notice">*We require a point of contact in order to alert those who have been awarded dives.</p>
             </div>
@@ -97,8 +97,8 @@
                 </div>
 
                 <div class="question" id="q9">
-                    <label for="country">Country or Region</label><br>
-                    <select id="country" name="country" autocomplete="country" enterkeyhint="done" required>
+                    <label for="country">Country or Region:</label><br>
+                    <select id="country" name="country" autocomplete="country" enterkeyhint="next" required>
                         <option></option>
                         <option value="AF">Afghanistan</option>
                         <option value="AX">Åland Islands</option>
@@ -354,61 +354,67 @@
                 </div>
 
                 <div class="question" id="q10">
-                    <label for="city">City</label><br>
+                    <label for="city">City:</label><br>
                     <input required type="text" id="city" name="city" autocomplete="address-level2" enterkeyhint="next">
                 </div>
 
                 <div class="question" id="q11">
-                    <label for="state">State or Providence</label><br>
+                    <label for="state">State or Providence:</label><br>
                     <input required type="text" id="state" name="state" autocomplete="address-level3" enterkeyhint="next">
                 </div>
 
                 <div class="question" id="q12">
-                    <label for="postal-code">ZIP or postal code</label><br>
+                    <label for="postal-code">ZIP or postal code:</label><br>
                     <input class="postal-code" id="postal-code" name="postal-code" autocomplete="postal-code" required enterkeyhint="next">
                 </div>
             </div>
 
-<!-- -=-=-= not done below this line -=-=-= -->
             <div id="pinfo" class="info">
-                <!-- dropdown selection -->
-                <label>Project Type:</label><br>
-                <input type="radio" id="class" name="project_type" value="Class" required>
-                <label for="class">Class</label><br>
-                <input type="radio" id="group" name="project_type" value="Group" required>
-                <label for="group">Group</label><br>
-                <input type="radio" id="individual" name="project_type" value="Individual" required>
-                <label for="individual">Individual</label><br><br>
+                <div class="question" id="q12">
+                    <label>Project Type:</label><br>
+                        <div class="lefted">
+                            <input type="radio" id="class" name="project_type" value="Class" required>
+                            <label for="class">Class</label><br>
+                            <input type="radio" id="group" name="project_type" value="Group" required>
+                            <label for="group">Group</label><br>
+                            <input type="radio" id="individual" name="project_type" value="Individual" required>
+                            <label for="individual">Individual</label>
+                        </div>
+                </div>
+                
+                <div class="question" id="q13">
+                    <label for="people_involved">Number of people involved:</label><br>
+                        <input type="number" id="quantity" name="quantity" min="1" max="999" placeholder="1" value="1" required enterkeyhint="next">
+                    </select>
+                </div>
 
-                <!-- number scrolly thingy with the up and down arrows or you can type the ammount, defaults to 1 if individual -->
-                <label for="people_involved">Number of people involved:</label><br>
-                <select id="people_involved" name="people_involved" required>
-                    <option value="" disabled selected>Select a number</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <!-- Add more options for other numbers -->
-                </select><br><br>
+                <div class="question" id="q14">
+                    <label for="science_fair">Part of a Science Fair Project (Y/N):</label>
+                        <div class="lefted">
+                            <input type="radio" id="science_fair_yes" name="science_fair" value="Yes" required>
+                            <label for="science_fair_yes">Yes</label><br>
+                            <input type="radio" id="science_fair_no" name="science_fair" value="No" required>
+                            <label for="science_fair_no">No</label>
+                        </div>
+                </div>
 
-                <label for="science_fair">Part of a Science Fair Project (Y/N):</label><br>
-                <input type="radio" id="science_fair_yes" name="science_fair" value="Yes" required>
-                <label for="science_fair_yes">Yes</label><br>
-                <input type="radio" id="science_fair_no" name="science_fair" value="No" required>
-                <label for="science_fair_no">No</label><br><br>
+                <div class="question sfd" id="q15">
+                    <label for="science_fair_name">Project Name:</label><br>
+                    <input type="text" id="science_fair_name" name="science_fair_name" autocomplete="organization" enterkeyhint="next">
+                </div>
 
-                <!-- If part of a science project display -->
-                <label for="project_name">Project Name:</label><br>
-                <input type="text" id="project_name" name="project_name" required><br><br>
+                <div class="question sfd" id="q16">
+                    <label for="hypothesis">Hypothesis:</label><br>
+                    <textarea id="hypothesis" name="hypothesis" rows="4" cols="50" placeholder="A hypothesis is an educated guess that can be tested in an experiment." required></textarea>
+                </div>
 
-                <label for="hypothesis">Hypothesis:</label><br>
-                <textarea id="hypothesis" name="hypothesis" rows="4" cols="50" required></textarea><br><br>
-
-                <label for="description">Description:</label><br>
-                <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
-
-                <label for="operation_requirements">Operation Requirements:</label><br>
-                <textarea id="operation_requirements" name="operation_requirements" rows="4" cols="50" required></textarea><br><br>
+                <div class="question sfd" id="q17">
+                    <label for="description">Description:</label><br>
+                    <textarea id="description" name="description" rows="4" cols="50" placeholder="What is your project about?" required></textarea>
+                </div>
             </div>
 
+<!-- -=-=-= not done below this line -=-=-= -->
             <div id="linfo" class="info">
                 <label for="general_location">General Location:</label><br>
                 <select id="general_location" name="general_location" required>
@@ -462,6 +468,11 @@
                 <label for="objects">Objects</label><br>
                 <!-- Add more checkboxes for other requirements -->
 
+                <div class="question" id="q18">
+                    <label for="operation_requirements">Operation Requirements:</label><br>
+                    <textarea id="operation_requirements" name="operation_requirements" rows="4" cols="50" required></textarea>
+                </div>
+
                 <label for="anticipated_outcome">Anticipated Outcome:</label><br>
                 <textarea id="anticipated_outcome" name="anticipated_outcome" rows="4" cols="50" required></textarea><br><br>
 
@@ -474,7 +485,21 @@
             <input type="submit" value="Submit">
         </form>
     </div>
-</body>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer">
+            <img src="images/OAR.png" alt="Oceans and Robotics Logo" width="125px">
+                <div class="contact">
+                    <p>Oceans and Robotics, Inc 501(c)(3)</p>
+                    <span><i class="fas fa-phone"></i> &nbsp; +1 (831) 633-7033</span><br>
+                    <span><i class="fas fa-envelope"></i> &nbsp; oceansandrobotics@gmail.com</span>
+                </div>
+            <img src="images/nsf.png" alt="NSF Logo" width="125px">
+        </div>
+    </footer>
+
+</body>gvuvt
 
 <script>
    const phoneInputField = document.querySelector("#phone");

@@ -66,10 +66,32 @@ window.addEventListener('DOMContentLoaded', function() {
         return formattedNumber;
     }
 
-    /* Email address */
+    /* Science Fair */
+    // Get the science fair radio buttons
+    var scienceFairYes = document.getElementById('science_fair_yes');
+    var scienceFairNo = document.getElementById('science_fair_no');
 
+    // Add change event listener to the science fair radio buttons
+    scienceFairYes.addEventListener('change', toggleScienceFairQuestions);
+    scienceFairNo.addEventListener('change', toggleScienceFairQuestions);
 
-    /* Required */
+    // Function to toggle the visibility of the science fair questions
+    function toggleScienceFairQuestions() {
+        var scienceFairQuestions = document.querySelectorAll('.question.sfd');
+        var pinfo = document.getElementById('pinfo');
 
+        // If "Yes" is selected, display the questions; otherwise, hide them
+        if (scienceFairYes.checked) {
+            scienceFairQuestions.forEach(function (question) {
+                question.classList.add('show');
+            });
+            pinfo.classList.add('show');
+        } else {
+            scienceFairQuestions.forEach(function (question) {
+                question.classList.remove('show');
+            });
+            pinfo.classList.remove('show');
+        }
+    }
 });
 
