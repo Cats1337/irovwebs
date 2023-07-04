@@ -8,6 +8,7 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
  </head>
 <body>
+    <!-- Style this title area -->
     <h1>Dive Application</h1>
     <p>Fill out the form below to apply for a Dive.</p>
 
