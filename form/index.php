@@ -416,65 +416,79 @@
 
 <!-- -=-=-= not done below this line -=-=-= -->
             <div id="linfo" class="info">
-                <label for="general_location">General Location:</label><br>
-                <select id="general_location" name="general_location" required>
-                    <option value="" disabled selected>Select a location</option>
-                    <option value="location1">Location 1</option>
-                    <option value="location2">Location 2</option>
-                    <!-- Add more options for other locations -->
-                </select><br><br>
+                <div class="question" id="q18">
+                    <label for="general_location">General Location:</label><br>
+                    <select id="general_location" name="general_location" required>
+                        <option value="" disabled selected>Select a location</option>
+                        <option value="location1">Location 1</option>
+                        <option value="location2">Location 2</option>
+                        <!-- Add more options for other locations -->
+                    </select>
+                </div>
 
                 <!-- display specific locations based on general location answer -->
-                <label for="specific_location">Specific Location:</label><br>
-                <select id="specific_location" name="specific_location" required>
-                    <option value="" disabled selected>Select a location</option>
-                    <option value="location1">Specific Location 1</option>
-                    <option value="location2">Specific Location 2</option>
-                    <!-- Add more options for other locations -->
-                </select><br><br>
+                <div class="question" id="q19">
+                    <label for="specific_location">Specific Location:</label><br>
+                    <select id="specific_location" name="specific_location" required>
+                        <option value="" disabled selected>Select a location</option>
+                        <option value="location1">Specific Location 1</option>
+                        <option value="location2">Specific Location 2</option>
+                        <!-- Add more options for other locations -->
+                    </select>
+                </div>
             </div>
+<!-- -=-=-= not done above or below this line -=-=-= -->
 
             <div id="tinfo" class="info">
                 <!-- number scrolly thingy -->
-                <label for="num_dives">Number of Dives:</label><br>
-                <input type="number" id="num_dives" name="num_dives" required><br><br>
+                <div class="question" id="q20">
+                    <label for="num_dives">Number of Dives:</label><br>
+                    <input type="number" id="num_dives" name="num_dives" required>
+                </div>
 
                 <!-- dropdown -->
-                <label>Timing of dives:</label><br>
-                <input type="radio" id="daily" name="timing_dives" value="Daily" required>
-                <label for="daily">Daily</label><br>
-                <input type="radio" id="weekly" name="timing_dives" value="Weekly" required>
-                <label for="weekly">Weekly</label><br>
-                <input type="radio" id="monthly" name="timing_dives" value="Monthly" required>
-                <label for="monthly">Monthly</label><br><br>
+                <div class="question" id="q21">
+                    <label>Timing of dives:</label><br>
+                    <div class="lefted">
+                        <input type="radio" id="daily" name="timing_dives" value="Daily" required>
+                        <label for="daily">Daily</label><br>
+                        <input type="radio" id="weekly" name="timing_dives" value="Weekly" required>
+                        <label for="weekly">Weekly</label><br>
+                        <input type="radio" id="monthly" name="timing_dives" value="Monthly" required>
+                        <label for="monthly">Monthly</label>
+                    </div>
+                </div>
 
                 <!-- dropdown w/ fill in blank option -->
-                <label for="time_in_water">Required time in water:</label><br>
-                <select id="time_in_water" name="time_in_water" required>
-                    <option value="" disabled selected>Select a time</option>
-                    <option value="1">1 hour</option>
-                    <option value="2">2 hours</option>
-                    <!-- Add more options for other times -->
-                    <option value="other">Other</option>
-                    <!-- if other, provide a fill in blank -->
-                </select><br><br>
+                <div class="question" id="q22">
+                    <label for="time_in_water">Required time in water:</label><br>
+                        <input type="number" id="time_in_water" name="time_in_water" min="1" max="5" placeholder="1" value="1"><br>
+                        <span class="note">in Hours</span>
+                    </select>
+                </div>
 
-                <label>Other Requirements:</label><br>
-                <input type="checkbox" id="quadrates" name="requirements[]" value="Quadrates">
-                <label for="quadrates">Quadrates</label><br>
-                <input type="checkbox" id="sensors" name="requirements[]" value="Sensors">
-                <label for="sensors">Sensors</label><br>
-                <input type="checkbox" id="objects" name="requirements[]" value="Objects">
-                <label for="objects">Objects</label><br>
+                <div class="question" id="q23">
+                    <label>Operation Requirements:</label><br>
+                    <div class="lefted">
+                        <input type="checkbox" id="quadrates" name="requirements[]" value="Quadrates">
+                        <label for="quadrates">Quadrates</label><br>
+                        <input type="checkbox" id="sensors" name="requirements[]" value="Sensors">
+                        <label for="sensors">Sensors</label><br>
+                        <input type="checkbox" id="objects" name="requirements[]" value="Objects">
+                        <label for="objects">Objects</label><br>
+                    </div>
+                </div>
                 <!-- Add more checkboxes for other requirements -->
 
-                <div class="question" id="q18">
-                    <label for="operation_requirements">Operation Requirements:</label><br>
+                <div class="question" id="q24">
+                    <label for="operation_requirements">Other Requirements:</label><br>
                     <textarea id="operation_requirements" name="operation_requirements" rows="4" cols="50" required></textarea>
                 </div>
 
-                <label for="anticipated_outcome">Anticipated Outcome:</label><br>
-                <textarea id="anticipated_outcome" name="anticipated_outcome" rows="4" cols="50" required></textarea><br><br>
+                <div class="question" id="q25">
+                    <label for="anticipated_outcome">Anticipated Outcome:</label><br>
+                    <textarea id="anticipated_outcome" name="anticipated_outcome" rows="4" cols="50" required></textarea>
+                </div>
 
                 <!-- <label for="project_result">Result of Project afterward:</label><br>
                 <textarea id="project_result" name="project_result" rows="4" cols="50" required></textarea><br><br> -->
@@ -482,24 +496,28 @@
 
             <!-- review button -->
             <input type="button" id="review" value="Review" onclick="review()">
-            <input type="submit" value="Submit">
+
+            <!-- Is all this information correct? -->
+            <!-- Make sure all required fields are filled out -->
+            <!-- Get all the info, two buttons Back or Submit -->
+
+            <!-- <input type="submit" value="Submit"> -->
         </form>
+
+        <!-- footer -->
+        <footer>
+            <div class="footer">
+                <img src="images/OAR.png" alt="Oceans and Robotics Logo" width="125px">
+                    <div class="contact">
+                        <p>Oceans and Robotics, Inc 501(c)(3)</p>
+                        <span><i class="fas fa-phone"></i> &nbsp; +1 (831) 633-7033</span><br>
+                        <span><i class="fas fa-envelope"></i> &nbsp; oceansandrobotics@gmail.com</span>
+                    </div>
+                <img src="images/nsf.png" alt="NSF Logo" width="125px">
+            </div>
+        </footer>
     </div>
-
-    <!-- footer -->
-    <footer>
-        <div class="footer">
-            <img src="images/OAR.png" alt="Oceans and Robotics Logo" width="125px">
-                <div class="contact">
-                    <p>Oceans and Robotics, Inc 501(c)(3)</p>
-                    <span><i class="fas fa-phone"></i> &nbsp; +1 (831) 633-7033</span><br>
-                    <span><i class="fas fa-envelope"></i> &nbsp; oceansandrobotics@gmail.com</span>
-                </div>
-            <img src="images/nsf.png" alt="NSF Logo" width="125px">
-        </div>
-    </footer>
-
-</body>gvuvt
+</body>
 
 <script>
    const phoneInputField = document.querySelector("#phone");

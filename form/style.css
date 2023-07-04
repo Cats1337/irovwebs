@@ -90,6 +90,8 @@ div.footer {
     justify-content: space-evenly;
     grid-template-areas: "auto auto auto";
     text-align: center;
+    height: 300px;
+    align-items: center;
 }
 
 div.lefted {
@@ -126,6 +128,10 @@ input[type=radio], input[type=radio] + label {
     cursor: pointer;
 }
 
+input[type=checkbox], input[type=checkbox] + label {
+    cursor: pointer;
+}
+
 .question.sfd {
     opacity: 0;
     transform: translateY(-30%);
@@ -144,4 +150,13 @@ input[type=radio], input[type=radio] + label {
 
 #pinfo.show {
     height: 594px;
+}
+
+.note {
+    color: grey;
+}
+
+/* input button */
+input[type=button], input[type=submit] {
+    cursor: pointer;
 }
