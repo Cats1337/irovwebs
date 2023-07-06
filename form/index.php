@@ -25,22 +25,22 @@
             <div id="cinfo" class="info">
                 <div class="question" id="q1">
                     <label for="fname" >First Name:</label><br>
-                    <input type="text" id="fname" name="fname" placeholder="First Name" required enterkeyhint="next">
+                    <input type="text" id="fname" name="fname" placeholder="First Name" required enterkeyhint="next" autocomplete="given-name">
                 </div>
                 <div class="question" id="q2">
                     <label for="lname">Last Name:</label><br>
-                    <input type="text" id="lname" name="lname" placeholder="Last Name (Optional)" enterkeyhint="next">
+                    <input type="text" id="lname" name="lname" placeholder="Last Name (Optional)" enterkeyhint="next" autocomplete="family-name">
                 </div>
                 
                 <!-- require either email or phone -->
                 <div class="question" id="q3">
                     <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" placeholder="Email" enterkeyhint="next">
+                    <input type="email" id="email" name="email" placeholder="Email" enterkeyhint="next" autocomplete="email">
                 </div>
     
                 <div class="question" id="q4">
                     <label for="phone">Phone Number:</label><br>
-                    <input type="tel" id="phone" name="phone" placeholder="(###) ###-####" enterkeyhint="next">
+                    <input type="tel" id="phone" name="phone" placeholder="(###) ###-####" enterkeyhint="next" autocomplete="tel">
                 </div>
                 <p id="cont" class="notice">*We require a point of contact in order to alert those who have been awarded dives.</p>
             </div>
@@ -99,7 +99,7 @@
 
                 <div class="question" id="q9">
                     <label for="country">Country or Region:</label><br>
-                    <select id="country" name="country" autocomplete="country" enterkeyhint="next" required>
+                    <select id="country" name="country" autocomplete="country" enterkeyhint="next" required >
                         <option></option>
                         <option value="AF">Afghanistan</option>
                         <option value="AX">Åland Islands</option>
@@ -361,7 +361,7 @@
 
                 <div class="question" id="q11">
                     <label for="state">State or Providence:</label><br>
-                    <input required type="text" id="state" name="state" autocomplete="address-level3" enterkeyhint="next">
+                    <input required type="text" id="state" name="state" autocomplete="address-level1" enterkeyhint="next">
                 </div>
 
                 <div class="question" id="q12">
@@ -372,36 +372,36 @@
 
             <div id="pinfo" class="info">
                 <div class="question" id="q12">
-                    <label>Project Type:</label><br>
+                    <label for="project_type">Project Type:</label><br>
                         <div class="lefted">
-                            <input type="radio" id="class" name="project_type" value="Class" required>
-                            <label for="class">Class</label><br>
-                            <input type="radio" id="group" name="project_type" value="Group" required>
+                            <input type="radio" id="project_type" name="class" value="Class" required>
+                            <label for="project_type">Class</label><br>
+                            <input type="radio" id="group" name="group" value="Group" required>
                             <label for="group">Group</label><br>
-                            <input type="radio" id="individual" name="project_type" value="Individual" required>
+                            <input type="radio" id="individual" name="individual" value="Individual" required>
                             <label for="individual">Individual</label>
                         </div>
                 </div>
                 
                 <div class="question" id="q13">
-                    <label for="people_involved">Number of people involved:</label><br>
-                        <input type="number" id="quantity" name="quantity" min="1" max="999" placeholder="1" value="1" required enterkeyhint="next">
+                    <label for="num_people">Number of people involved:</label><br>
+                        <input type="number" id="num_people" name="num_people" min="1" max="999" placeholder="1" value="1" required enterkeyhint="next">
                     </select>
                 </div>
 
                 <div class="question" id="q14">
                     <label for="science_fair">Part of a Science Fair Project (Y/N):</label>
-                        <div class="lefted">
-                            <input type="radio" id="science_fair_yes" name="science_fair" value="Yes" required>
-                            <label for="science_fair_yes">Yes</label><br>
-                            <input type="radio" id="science_fair_no" name="science_fair" value="No" required>
-                            <label for="science_fair_no">No</label>
-                        </div>
+                    <div class="lefted">
+                        <input type="radio" id="science_fair" name="science_fair" value="Yes" required>
+                        <label for="science_fair">Yes</label><br>
+                        <input type="radio" id="science_fair_sfn" name="science_fair" value="No" required>
+                        <label for="science_fair_sfn">No</label>
+                    </div>
                 </div>
 
                 <div class="question sfd" id="q15">
-                    <label for="science_fair_name">Project Name:</label><br>
-                    <input type="text" id="science_fair_name" name="science_fair_name" autocomplete="organization" enterkeyhint="next">
+                    <label for="project_name">Project Name:</label><br>
+                    <input type="text" id="project_name" name="project_name" autocomplete="organization" enterkeyhint="next">
                 </div>
 
                 <div class="question sfd" id="q16">
@@ -415,44 +415,40 @@
                 </div>
             </div>
 
-<!-- -=-=-= not done below this line -=-=-= -->
             <div id="linfo" class="info">
                 <div class="question" id="q18">
                     <label for="general_location">General Location:</label><br>
                     <select id="general_location" name="general_location" required>
                         <option value="" disabled selected>Select a location</option>
-                        <option value="location1">Location 1</option>
-                        <option value="location2">Location 2</option>
+                        <option value="location1">Marina, California</option>
+                        <option value="location2">Rockport, Massachusetts</option>
                         <!-- Add more options for other locations -->
                     </select>
                 </div>
-
+                
+                <!-- If Marina is selected, show -->
                 <!-- display specific locations based on general location answer -->
-                <div class="question" id="q19">
-                    <label for="specific_location">Specific Location:</label><br>
-                    <select id="specific_location" name="specific_location" required>
-                        <option value="" disabled selected>Select a location</option>
-                        <option value="location1">Specific Location 1</option>
-                        <option value="location2">Specific Location 2</option>
-                        <!-- Add more options for other locations -->
-                    </select>
+                <div class="map" id="mamap">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3063.388614884406!2d-121.89183000753806!3d36.603395255078404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808de43cc9cf4f51%3A0xabe8579d83a757ed!2sMunicipal%20Wharf%202%2C%20Monterey%2C%20CA%2093940!5e1!3m2!1sen!2sus!4v1688667732472!5m2!1sen!2sus" width="370" height="300" style="border:0; border-radius:3%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="map" id="rpmap">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4403.825484984563!2d-70.61564496107859!3d42.66035808906004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e328ae8d110d8d%3A0xf473ebf9a15bea5a!2sRockport%20Harbor!5e1!3m2!1sen!2sus!4v1688674011241!5m2!1sen!2sus" width="370" height="300" style="border:0; border-radius:3%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-<!-- -=-=-= not done above or below this line -=-=-= -->
 
             <div id="tinfo" class="info">
                 <!-- number scrolly thingy -->
-                <div class="question" id="q20">
+                <div class="question" id="q19">
                     <label for="num_dives">Number of Dives:</label><br>
                     <input type="number" id="num_dives" name="num_dives" required>
                 </div>
 
                 <!-- dropdown -->
-                <div class="question" id="q21">
-                    <label>Timing of dives:</label><br>
+                <div class="question" id="q20">
+                    <label for="timing_dives">Timing of dives:</label><br>
                     <div class="lefted">
-                        <input type="radio" id="daily" name="timing_dives" value="Daily" required>
-                        <label for="daily">Daily</label><br>
+                        <input type="radio" id="timing_dives" name="timing_dives" value="Daily" required>
+                        <label for="timing_dives">Daily</label><br>
                         <input type="radio" id="weekly" name="timing_dives" value="Weekly" required>
                         <label for="weekly">Weekly</label><br>
                         <input type="radio" id="monthly" name="timing_dives" value="Monthly" required>
@@ -461,32 +457,32 @@
                 </div>
 
                 <!-- dropdown w/ fill in blank option -->
-                <div class="question" id="q22">
+                <div class="question" id="q21">
                     <label for="time_in_water">Required time in water:</label><br>
                         <input type="number" id="time_in_water" name="time_in_water" min="1" max="5" placeholder="1" value="1"><br>
                         <span class="note">in Hours</span>
                     </select>
                 </div>
 
-                <div class="question" id="q23">
-                    <label>Operation Requirements:</label><br>
+                <div class="question" id="q22">
+                    <label for="reqs">Operation Requirements:</label><br>
                     <div class="lefted">
-                        <input type="checkbox" id="quadrates" name="requirements[]" value="Quadrates">
-                        <label for="quadrates">Quadrates</label><br>
-                        <input type="checkbox" id="sensors" name="requirements[]" value="Sensors">
+                        <input type="checkbox" id="reqs" name="reqs" value="Quadrates">
+                        <label for="reqs">Quadrates</label><br>
+                        <input type="checkbox" id="sensors" name="reqs" value="Sensors">
                         <label for="sensors">Sensors</label><br>
-                        <input type="checkbox" id="objects" name="requirements[]" value="Objects">
+                        <input type="checkbox" id="objects" name="reqs" value="Objects">
                         <label for="objects">Objects</label><br>
                     </div>
                 </div>
                 <!-- Add more checkboxes for other requirements -->
 
-                <div class="question" id="q24">
+                <div class="question" id="q23">
                     <label for="operation_requirements">Other Requirements:</label><br>
                     <textarea id="operation_requirements" name="operation_requirements" rows="4" cols="50" required></textarea>
                 </div>
 
-                <div class="question" id="q25">
+                <div class="question" id="q24">
                     <label for="anticipated_outcome">Anticipated Outcome:</label><br>
                     <textarea id="anticipated_outcome" name="anticipated_outcome" rows="4" cols="50" required></textarea>
                 </div>

@@ -68,8 +68,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
     /* Science Fair */
     // Get the science fair radio buttons
-    var scienceFairYes = document.getElementById('science_fair_yes');
-    var scienceFairNo = document.getElementById('science_fair_no');
+    var scienceFairYes = document.getElementById('science_fair');
+    var scienceFairNo = document.getElementById('science_fair_sfn');
 
     // Add change event listener to the science fair radio buttons
     scienceFairYes.addEventListener('change', toggleScienceFairQuestions);
@@ -91,6 +91,39 @@ window.addEventListener('DOMContentLoaded', function() {
                 question.classList.remove('show');
             });
             pinfo.classList.remove('show');
+        }
+    }
+
+    /* Map */
+    // Get the general location select element
+    var generalLocationSelect = document.getElementById('general_location');
+
+    // Get the map elements
+    var mamap = document.getElementById('mamap');
+    var rpmap = document.getElementById('rpmap');
+
+    // Add change event listener to the general location select element
+    generalLocationSelect.addEventListener('change', toggleSpecificMap);
+
+    // Function to toggle the visibility of the specific map based on the general location
+    function toggleSpecificMap() {
+        // Hide all map elements
+        hideMapElements();
+
+        // Show the specific map based on the selected general location
+        var selectedLocation = generalLocationSelect.value;
+        if (selectedLocation === 'location1') {
+            mamap.classList.add('show');
+        } else if (selectedLocation === 'location2') {
+            rpmap.classList.add('show');
+        }
+    }
+
+    // Function to hide all map elements
+    function hideMapElements() {
+        var mapElements = document.getElementsByClassName('map');
+        for (var i = 0; i < mapElements.length; i++) {
+            mapElements[i].classList.remove('show');
         }
     }
 });

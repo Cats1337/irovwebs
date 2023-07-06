@@ -135,12 +135,14 @@ input[type=checkbox], input[type=checkbox] + label {
 .question.sfd {
     opacity: 0;
     transform: translateY(-30%);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, transformY 0.3s ease;
+    position: fixed;
 }
 
 .question.sfd.show {
     opacity: 1;
     transform: translateY(0);
+    position: unset;
 }
 
 #pinfo {
@@ -159,4 +161,14 @@ input[type=checkbox], input[type=checkbox] + label {
 /* input button */
 input[type=button], input[type=submit] {
     cursor: pointer;
+}
+
+/*  */
+.map{
+    display: none;
+}
+
+.map.show{
+    display: inline;
+    border-radius: 3%;
 }
