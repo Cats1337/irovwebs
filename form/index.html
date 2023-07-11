@@ -20,7 +20,7 @@
         </div>
 
     <div id="form-wrapper">
-        <form id="application-form" method="GET" action="submit_form.php" autocomplete="on"> <!-- turn method="POST" for final -->
+        <form id="application-form" method="POST" action="submit_form.php" autocomplete="on"> <!-- turn method="POST" for final -->
 
             <div id="cinfo" class="info">
                 <div class="question" id="q1">
@@ -35,7 +35,7 @@
                 <!-- require either email or phone -->
                 <div class="question" id="q3">
                     <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" placeholder="Email" enterkeyhint="next" autocomplete="email">
+                    <input type="email" id="email" name="email" placeholder="Email" required enterkeyhint="next" autocomplete="email">
                 </div>
     
                 <div class="question" id="q4">
@@ -374,11 +374,11 @@
                 <div class="question" id="q12">
                     <label for="project_type">Project Type:</label><br>
                         <div class="lefted">
-                            <input type="radio" id="project_type" name="class" value="Class" required>
+                            <input type="radio" id="project_type" name="project_type" value="Class" required>
                             <label for="project_type">Class</label><br>
-                            <input type="radio" id="group" name="group" value="Group" required>
+                            <input type="radio" id="group" name="project_type" value="Group" required>
                             <label for="group">Group</label><br>
-                            <input type="radio" id="individual" name="individual" value="Individual" required>
+                            <input type="radio" id="individual" name="project_type" value="Individual" required>
                             <label for="individual">Individual</label>
                         </div>
                 </div>
@@ -440,7 +440,7 @@
                 <!-- number scrolly thingy -->
                 <div class="question" id="q19">
                     <label for="num_dives">Number of Dives:</label><br>
-                    <input type="number" id="num_dives" name="num_dives" required>
+                    <input type="number" id="num_dives" name="num_dives" min="1" max="10" placeholder="1" value="1" required>
                 </div>
 
                 <!-- dropdown -->
@@ -491,14 +491,7 @@
                 <textarea id="project_result" name="project_result" rows="4" cols="50" required></textarea><br><br> -->
             </div>
 
-            <!-- review button -->
-            <input type="button" id="review" value="Review" onclick="review()">
-
-            <!-- Is all this information correct? -->
-            <!-- Make sure all required fields are filled out -->
-            <!-- Get all the info, two buttons Back or Submit -->
-
-            <!-- <input type="submit" value="Submit"> -->
+            <input type="submit" value="Submit">
         </form>
 
         <!-- footer -->
@@ -515,13 +508,4 @@
         </footer>
     </div>
 </body>
-
-<script>
-   const phoneInputField = document.querySelector("#phone");
-   const phoneInput = window.intlTelInput(phoneInputField, {
-     utilsScript:
-       "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-   });
- </script>
-
 </html>

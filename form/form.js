@@ -66,6 +66,27 @@ window.addEventListener('DOMContentLoaded', function() {
         return formattedNumber;
     }
 
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+
+    /* project_type = individual, lock number of people to 1 */
+    // Add event listener to project type radio buttons
+    const projectTypeRadios = document.getElementsByName('project_type');
+    projectTypeRadios.forEach(function(radio) {
+    radio.addEventListener('change', function() {
+        if (radio.value === 'Individual') {
+        document.getElementById('num_people').value = 1;
+        document.getElementById('num_people').setAttribute('disabled', 'disabled');
+        } else {
+        document.getElementById('num_people').removeAttribute('disabled');
+        }
+    });
+    });
+
+
     /* Science Fair */
     // Get the science fair radio buttons
     var scienceFairYes = document.getElementById('science_fair');
@@ -125,6 +146,6 @@ window.addEventListener('DOMContentLoaded', function() {
         for (var i = 0; i < mapElements.length; i++) {
             mapElements[i].classList.remove('show');
         }
-    }
+    }      
 });
 
