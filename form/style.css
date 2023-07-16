@@ -2,9 +2,21 @@
     font-family: 'Arial';
 }
 
-/*h1 {
-    text-transform: uppercase;
-}*/
+div#titles h1, div#titles p {
+    font-family: 'Bubble World', sans-serif;
+}
+div#titles {
+    text-align: center;
+    /* margin-top: 85px; */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-size: 3em;
+    color: hotpink;
+    text-shadow: 3px 3px black;
+}
 
 body {
     background: url('images/bg.png') no-repeat scroll center 0 #03060d;
@@ -146,12 +158,24 @@ input[type=checkbox], input[type=checkbox] + label {
 }
 
 #pinfo {
-    height: 260px;
-    transition: height 0.3s ease;
+    height: 573px;
 }
 
-#pinfo.show {
-    height: 594px;
+.dable {
+    cursor: not-allowed;
+    background: #293e5d;
+}
+
+#hypothesis-count, #description-count {
+    position: absolute;
+    margin-top: 84px;
+    margin-left: -22px;
+    font-size: .7em;
+    color: grey;
+}
+
+#description-count {
+    margin-left: -28px;
 }
 
 .note {

@@ -5,12 +5,15 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="form.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/bubble-world">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
  </head>
 <body>
     <!-- Style this title area -->
-    <h1>Dive Application</h1>
-    <p>Fill out the form below to apply for a Dive.</p>
+    <div id="titles">
+        <h1>Dive Application</h1>
+        <p>Fill out the form below to apply for a Dive.</p>
+    </div>
 
     <div id="wrapper">
             <div id="water"></div>
@@ -390,7 +393,7 @@
                 </div>
 
                 <div class="question" id="q14">
-                    <label for="science_fair">Part of a Science Fair Project (Y/N):</label>
+                    <label for="science_fair">Part of a Science Fair Project:</label>
                     <div class="lefted">
                         <input type="radio" id="science_fair" name="science_fair" value="Yes" required>
                         <label for="science_fair">Yes</label><br>
@@ -398,20 +401,22 @@
                         <label for="science_fair_sfn">No</label>
                     </div>
                 </div>
-
-                <div class="question sfd" id="q15">
+<!-- only hide q15 -->
+                <div class="question" id="q15">
                     <label for="project_name">Project Name:</label><br>
                     <input type="text" id="project_name" name="project_name" autocomplete="organization" enterkeyhint="next">
                 </div>
-
-                <div class="question sfd" id="q16">
+<!-- 250 word limit q16 -->
+                <div class="question" id="q16">
                     <label for="hypothesis">Hypothesis:</label><br>
-                    <textarea id="hypothesis" name="hypothesis" rows="4" cols="50" placeholder="A hypothesis is an educated guess that can be tested in an experiment." required></textarea>
+                    <textarea id="hypothesis" name="hypothesis" rows="4" cols="50" maxlength="250" placeholder="A hypothesis is an educated guess that can be tested in an experiment." required></textarea>
+                    <span id="hypothesis-count">250</span>
                 </div>
-
-                <div class="question sfd" id="q17">
+<!-- 1000 word limit q17 -->
+                <div class="question" id="q17">
                     <label for="description">Description:</label><br>
-                    <textarea id="description" name="description" rows="4" cols="50" placeholder="What is your project about?" required></textarea>
+                    <textarea id="description" name="description" rows="4" cols="50" maxlength="1000" placeholder="What is your project about?" required></textarea>
+                    <span id="description-count">1000</span>
                 </div>
             </div>
 
@@ -447,21 +452,28 @@
                 <div class="question" id="q20">
                     <label for="timing_dives">Timing of dives:</label><br>
                     <div class="lefted">
-                        <input type="radio" id="timing_dives" name="timing_dives" value="Daily" required>
-                        <label for="timing_dives">Daily</label><br>
                         <input type="radio" id="weekly" name="timing_dives" value="Weekly" required>
                         <label for="weekly">Weekly</label><br>
                         <input type="radio" id="monthly" name="timing_dives" value="Monthly" required>
-                        <label for="monthly">Monthly</label>
+                        <label for="monthly">Monthly</label><br>
+                        <input type="radio" id="timing_dives" name="timing_dives" value="Other" required>
+                        <label for="timing_dives">Other</label>
+                        <!-- fill in blank -->
+
+                        <!-- other -->
                     </div>
                 </div>
 
-                <!-- dropdown w/ fill in blank option -->
                 <div class="question" id="q21">
                     <label for="time_in_water">Required time in water:</label><br>
-                        <input type="number" id="time_in_water" name="time_in_water" min="1" max="5" placeholder="1" value="1"><br>
-                        <span class="note">in Hours</span>
-                    </select>
+                        <select id="time_in_water" name="time_in_water" required><br>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                            <option value="30">30</option>
+                        </select><br>
+                    <span class="note">in Minutes</span>
                 </div>
 
                 <div class="question" id="q22">

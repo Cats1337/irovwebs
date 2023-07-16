@@ -88,32 +88,29 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
     /* Science Fair */
-    // Get the science fair radio buttons
-    var scienceFairYes = document.getElementById('science_fair');
-    var scienceFairNo = document.getElementById('science_fair_sfn');
+      // Get the radio buttons for science fair selection
+  const scienceFairYes = document.getElementById('science_fair');
+  const scienceFairNo = document.getElementById('science_fair_sfn');
 
-    // Add change event listener to the science fair radio buttons
-    scienceFairYes.addEventListener('change', toggleScienceFairQuestions);
-    scienceFairNo.addEventListener('change', toggleScienceFairQuestions);
+  // Get the project name input field
+  const projectNameInput = document.getElementById('project_name');
 
-    // Function to toggle the visibility of the science fair questions
-    function toggleScienceFairQuestions() {
-        var scienceFairQuestions = document.querySelectorAll('.question.sfd');
-        var pinfo = document.getElementById('pinfo');
+  // Add event listeners to the radio buttons
+  scienceFairYes.addEventListener('change', enableProjectName);
+  scienceFairNo.addEventListener('change', disableProjectName);
 
-        // If "Yes" is selected, display the questions; otherwise, hide them
-        if (scienceFairYes.checked) {
-            scienceFairQuestions.forEach(function (question) {
-                question.classList.add('show');
-            });
-            pinfo.classList.add('show');
-        } else {
-            scienceFairQuestions.forEach(function (question) {
-                question.classList.remove('show');
-            });
-            pinfo.classList.remove('show');
-        }
-    }
+  // Function to enable the project name input field
+  function enableProjectName() {
+    projectNameInput.disabled = false;
+    projectNameInput.classList.remove('dable');
+  }
+
+  // Function to disable the project name input field
+  function disableProjectName() {
+    projectNameInput.disabled = true;
+    projectNameInput.value = ''; // Clear the input value when disabled
+    projectNameInput.classList.add('dable');
+  }
 
     /* Map */
     // Get the general location select element
@@ -146,6 +143,43 @@ window.addEventListener('DOMContentLoaded', function() {
         for (var i = 0; i < mapElements.length; i++) {
             mapElements[i].classList.remove('show');
         }
-    }      
+    }
+
+    /* Text Area */
+    const hypothesisTextarea = document.getElementById('hypothesis');
+  const hypothesisCount = document.getElementById('hypothesis-count');
+  const descriptionTextarea = document.getElementById('description');
+  const descriptionCount = document.getElementById('description-count');
+
+  hypothesisTextarea.addEventListener('input', updateCharacterCount);
+  descriptionTextarea.addEventListener('input', updateCharacterCount);
+
+  function updateCharacterCount() {
+    const hypothesisMaxLength = hypothesisTextarea.getAttribute('maxlength');
+    const hypothesisCurrentLength = hypothesisTextarea.value.length;
+    const hypothesisCharactersLeft = hypothesisMaxLength - hypothesisCurrentLength;
+
+    hypothesisCount.textContent = hypothesisCharactersLeft;
+
+    const descriptionMaxLength = descriptionTextarea.getAttribute('maxlength');
+    const descriptionCurrentLength = descriptionTextarea.value.length;
+    const descriptionCharactersLeft = descriptionMaxLength - descriptionCurrentLength;
+
+    descriptionCount.textContent = descriptionCharactersLeft;
+
+    updateTextColor(hypothesisCharactersLeft, hypothesisCount);
+    updateTextColor(descriptionCharactersLeft, descriptionCount);
+  }
+
+  function updateTextColor(charactersLeft, countElement) {
+    if (charactersLeft <= 0) {
+      countElement.style.color = 'rgb(255, 0, 0)';
+    } else if (charactersLeft < 6) {
+      const redness = 128 + ((6 - charactersLeft) * 26);
+      countElement.style.color = `rgb(${redness}, 128, 128)`;
+    } else {
+      countElement.style.color = 'rgb(128, 128, 128)';
+    }
+  }
 });
 
