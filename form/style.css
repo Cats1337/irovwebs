@@ -58,7 +58,7 @@ div#water {
 div#bubbles {
     background: url('images/bubbles.png') no-repeat scroll center 0;
     position: relative;
-    top: -3400px;
+    top: -2175px;
     width: 1224px;
     height: 4000px;
 }
