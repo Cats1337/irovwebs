@@ -41,7 +41,7 @@ div#form-wrapper {
 
 div#wrapper {
     width: 1600px;
-    height: 3600px;
+    height: 4830px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
@@ -58,9 +58,9 @@ div#water {
 div#bubbles {
     background: url('images/bubbles.png') no-repeat scroll center 0;
     position: relative;
-    top: -2000px;
+    top: -3400px;
     width: 1224px;
-    height: 2600px;
+    height: 4000px;
 }
 
 div#form-wrapper div.info {
@@ -142,7 +142,7 @@ input[type=checkbox], input[type=checkbox] + label {
 
 .dable {
     cursor: not-allowed;
-    background: #293e5d;
+    background: #293d5b;
 }
 
 #hypothesis-count, #description-count {
@@ -165,6 +165,20 @@ input[type=checkbox], input[type=checkbox] + label {
 
 input[type=button], input[type=submit] {
     cursor: pointer;
+}
+
+input[type=submit] {
+    height: auto;
+    width: auto;
+    font-size: 3em;
+}
+
+input:hover[type=submit] {
+    background: #14376b;
+}
+
+input:active[type=submit] {
+    background: #08152b;
 }
 
 .map{
