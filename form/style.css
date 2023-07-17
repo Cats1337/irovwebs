@@ -7,7 +7,6 @@ div#titles h1, div#titles p {
 }
 div#titles {
     text-align: center;
-    /* margin-top: 85px; */
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -22,7 +21,6 @@ body {
     background: url('images/bg.png') no-repeat scroll center 0 #03060d;
     overflow-x: hidden;
     vertical-align: baseline;
-    /* min-width: 1600px; */
     margin: 0;
     background-size: cover;
     cursor: default;
@@ -34,9 +32,6 @@ html, body {
 }
 
 div#form-wrapper {
-    /* position: absolute;
-    top: 1000px; */
-
     position: absolute;
     top: 1050px;
     width: 100%;
@@ -52,13 +47,11 @@ div#wrapper {
     position: relative;
 }
 
-/* not filling screen */
 div#water {
     background: url('images/water.png') no-repeat scroll center 0 transparent;
     position: relative;
     top: 600px;
     width: 100%;
-    /* height: 3360px; */
     height: 3000px;
 }
 
@@ -67,15 +60,11 @@ div#bubbles {
     position: relative;
     top: -2000px;
     width: 1224px;
-    /* height: 5744px; */
     height: 2600px;
-    /* margin: 0 auto; */
 }
 
-
 div#form-wrapper div.info {
-    width: 400px;
-    /* height: 280px; */
+    width: 500px;
     margin: 0 auto;
     padding: 10px 0;
     margin-bottom: 100px;
@@ -86,13 +75,17 @@ div#form-wrapper div.info {
 }
 
 div#form-wrapper p.notice {
-    font-size: .6em;
+    font-size: .8em;
     color: red;
 }
 
-/* class="question" */
 div#form-wrapper div.question {
     padding-bottom: 1em;
+    font-size: 1.5em;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-gap: 0.25em;
 }
 
 /* footer */
@@ -108,8 +101,10 @@ div.footer {
 
 div.lefted {
     text-align: left;
-    width: 100px;
     margin: auto;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 25px auto;
 }
 
 /* input type="number" */
@@ -117,8 +112,9 @@ input[type=number] {
     width: 40px;
 }
 
-input{
-    height: 20px;
+input, select{
+    height: 30px;
+    font-size: .85em;
     border-radius: 5px;
     border: 1px solid #264e7e;
     background: #0d2343;
@@ -144,23 +140,6 @@ input[type=checkbox], input[type=checkbox] + label {
     cursor: pointer;
 }
 
-.question.sfd {
-    opacity: 0;
-    transform: translateY(-30%);
-    transition: opacity 0.3s ease, transformY 0.3s ease;
-    position: fixed;
-}
-
-.question.sfd.show {
-    opacity: 1;
-    transform: translateY(0);
-    position: unset;
-}
-
-#pinfo {
-    height: 573px;
-}
-
 .dable {
     cursor: not-allowed;
     background: #293e5d;
@@ -168,26 +147,26 @@ input[type=checkbox], input[type=checkbox] + label {
 
 #hypothesis-count, #description-count {
     position: absolute;
-    margin-top: 84px;
-    margin-left: -22px;
+    bottom: 8px;
+    right: 5px;
     font-size: .7em;
     color: grey;
 }
 
-#description-count {
-    margin-left: -28px;
+.textarea-wrapper{
+    position: relative;
+    display: inline-block;
 }
 
 .note {
     color: grey;
+    font-size: 0.7em;
 }
 
-/* input button */
 input[type=button], input[type=submit] {
     cursor: pointer;
 }
 
-/*  */
 .map{
     display: none;
 }
@@ -195,4 +174,8 @@ input[type=button], input[type=submit] {
 .map.show{
     display: inline;
     border-radius: 3%;
+}
+
+.contact{
+    display: grid;
 }
