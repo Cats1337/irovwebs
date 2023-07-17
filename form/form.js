@@ -181,5 +181,13 @@ window.addEventListener('DOMContentLoaded', function() {
       countElement.style.color = 'rgb(128, 128, 128)';
     }
   }
+
+  const otherRadio = document.getElementById('timing_dives');
+  const otherTextInput = document.getElementById('other-text');
+
+  otherTextInput.addEventListener('input', function () {
+    otherRadio.value = otherTextInput.value;
+  });
+
 });
 
