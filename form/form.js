@@ -191,3 +191,36 @@ window.addEventListener('DOMContentLoaded', function() {
 
 });
 
+/* Validation Check */
+window.addEventListener('DOMContentLoaded', (event) => {
+  const requiredInputs = document.querySelectorAll('input[required], select[required], textarea[required], radio[required], number[required], checkbox[required]');
+
+  requiredInputs.forEach((input) => {
+    input.addEventListener('invalid', () => {
+      input.style.border = '2px solid pink';
+      const label = getFirstLabelOfQuestion(input);
+      if (label) {
+        label.style.color = 'pink';
+      }
+    });
+
+    input.addEventListener('input', () => {
+      input.style.border = 'none';
+      const label = getFirstLabelOfQuestion(input);
+      if (label) {
+        label.style.color = '';
+      }
+    });
+  });
+
+  function getFirstLabelOfQuestion(input) {
+    const questionDiv = input.closest('.question');
+    if (questionDiv) {
+      const labels = questionDiv.querySelectorAll('label');
+      if (labels.length > 0) {
+        return labels[0];
+      }
+    }
+    return null;
+  }
+});
